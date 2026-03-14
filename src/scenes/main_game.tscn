@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://src/scenes/main_game.gd" id="1_a"]
+[ext_resource type="PackedScene" path="res://src/scenes/house_view.tscn" id="2_b"]
+[ext_resource type="PackedScene" path="res://src/scenes/shop_panel.tscn" id="3_c"]
+[ext_resource type="PackedScene" path="res://src/ui/bottom_bar.tscn" id="4_d"]
+[ext_resource type="Theme" path="res://data/theme.tres" id="5_e"]
+
+[node name="MainGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_e")
+script = ExtResource("1_a")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HouseView" parent="VBox" instance=ExtResource("2_b")]
+
+[node name="ShopPanel" parent="VBox" instance=ExtResource("3_c")]
+
+[node name="BottomBar" parent="VBox" instance=ExtResource("4_d")]
+layout_mode = 2

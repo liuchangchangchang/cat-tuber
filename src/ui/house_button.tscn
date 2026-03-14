@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/ui/house_button.gd" id="1_a"]
+
+[node name="HouseButton" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 70)
+script = ExtResource("1_a")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="IconRect" type="ColorRect" parent="HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(40, 40)
+
+[node name="Info" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameLabel" type="Label" parent="HBox/Info"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "House Name"
+
+[node name="MultLabel" type="Label" parent="HBox/Info"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.843, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "1x earnings"
+
+[node name="Right" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="StatusLabel" type="Label" parent="HBox/Right"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 2
+text = ""
+
+[node name="BuyButton" type="Button" parent="HBox/Right"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(80, 30)
+text = "0"

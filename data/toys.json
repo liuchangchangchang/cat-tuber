@@ -1,0 +1,49 @@
+{
+    "items": [
+        {
+            "id": "ball_of_yarn",
+            "name": "Ball of Yarn",
+            "description": "Endless entertainment",
+            "base_cost": 25,
+            "base_production": 1.0,
+            "cost_multiplier": 1.15,
+            "color": "#F44336"
+        },
+        {
+            "id": "laser_pointer",
+            "name": "Laser Pointer",
+            "description": "The red dot of doom",
+            "base_cost": 150,
+            "base_production": 5.0,
+            "cost_multiplier": 1.15,
+            "color": "#FF1744"
+        },
+        {
+            "id": "scratching_post",
+            "name": "Scratching Post",
+            "description": "Redirecting destructive energy",
+            "base_cost": 800,
+            "base_production": 18.0,
+            "cost_multiplier": 1.15,
+            "color": "#8D6E63"
+        },
+        {
+            "id": "feather_wand",
+            "name": "Feather Wand",
+            "description": "Swoosh swoosh chaos",
+            "base_cost": 5000,
+            "base_production": 55.0,
+            "cost_multiplier": 1.15,
+            "color": "#26A69A"
+        },
+        {
+            "id": "robot_mouse",
+            "name": "Robot Mouse",
+            "description": "Automated chaos generator",
+            "base_cost": 40000,
+            "base_production": 200.0,
+            "cost_multiplier": 1.15,
+            "color": "#78909C"
+        }
+    ]
+}

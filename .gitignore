@@ -1,0 +1,24 @@
+# Godot 4+ specific ignores
+.godot/
+*.translation
+
+# Godot-specific ignores
+*.import
+export.cfg
+export_presets.cfg
+
+# Imported translations (Alarm is false positive)
+*.mo
+*.pot
+
+# Mono-specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+
+# Build
+build/
+
+# OS
+.DS_Store
+Thumbs.db

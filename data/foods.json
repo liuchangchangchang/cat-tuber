@@ -1,0 +1,49 @@
+{
+    "items": [
+        {
+            "id": "catnip",
+            "name": "Catnip",
+            "description": "Basic herb that drives cats wild",
+            "base_cost": 10,
+            "base_production": 0.5,
+            "cost_multiplier": 1.15,
+            "color": "#7CB342"
+        },
+        {
+            "id": "tuna_can",
+            "name": "Tuna Can",
+            "description": "Classic feline fuel",
+            "base_cost": 50,
+            "base_production": 2.0,
+            "cost_multiplier": 1.15,
+            "color": "#29B6F6"
+        },
+        {
+            "id": "salmon_fillet",
+            "name": "Salmon Fillet",
+            "description": "Premium protein for premium destruction",
+            "base_cost": 300,
+            "base_production": 8.0,
+            "cost_multiplier": 1.15,
+            "color": "#EF5350"
+        },
+        {
+            "id": "premium_cat_food",
+            "name": "Premium Cat Food",
+            "description": "Only the finest ingredients",
+            "base_cost": 2000,
+            "base_production": 30.0,
+            "cost_multiplier": 1.15,
+            "color": "#AB47BC"
+        },
+        {
+            "id": "golden_feast",
+            "name": "Golden Feast",
+            "description": "A meal fit for a feline king",
+            "base_cost": 15000,
+            "base_production": 100.0,
+            "cost_multiplier": 1.15,
+            "color": "#FFD54F"
+        }
+    ]
+}

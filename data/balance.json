@@ -1,0 +1,14 @@
+{
+    "starting_coins": 0,
+    "base_coins_per_second": 0.1,
+    "tap_bonus_coins": 1,
+    "tap_bonus_multiplier_per_upgrade": 0.05,
+    "cost_multiplier_default": 1.15,
+    "max_offline_hours": 8,
+    "offline_efficiency": 0.5,
+    "viewer_base": 5,
+    "viewer_per_coins_per_second": 0.5,
+    "ad_boost_multiplier": 2.0,
+    "ad_boost_duration_seconds": 120,
+    "save_interval_seconds": 30
+}

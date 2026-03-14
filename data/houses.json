@@ -1,0 +1,84 @@
+{
+    "houses": [
+        {
+            "id": "studio_apartment",
+            "name": "Studio Apartment",
+            "cost": 0,
+            "multiplier": 1.0,
+            "unlock_requirement": 0,
+            "room_color": "#5D4037",
+            "floor_color": "#8D6E63",
+            "furniture": [
+                {"id": "table", "name": "Table", "color": "#A1887F", "size": [180, 100], "position": [80, 550]},
+                {"id": "lamp", "name": "Lamp", "color": "#FFF176", "size": [60, 120], "position": [820, 500]},
+                {"id": "bookshelf", "name": "Bookshelf", "color": "#6D4C41", "size": [120, 150], "position": [440, 480]}
+            ]
+        },
+        {
+            "id": "small_house",
+            "name": "Small House",
+            "cost": 10000,
+            "multiplier": 2.0,
+            "unlock_requirement": 5000,
+            "room_color": "#455A64",
+            "floor_color": "#78909C",
+            "furniture": [
+                {"id": "sofa", "name": "Sofa", "color": "#42A5F5", "size": [240, 100], "position": [60, 560]},
+                {"id": "tv", "name": "TV", "color": "#212121", "size": [160, 100], "position": [700, 530]},
+                {"id": "plant", "name": "Plant", "color": "#66BB6A", "size": [70, 110], "position": [420, 540]},
+                {"id": "vase", "name": "Vase", "color": "#CE93D8", "size": [50, 80], "position": [920, 560]}
+            ]
+        },
+        {
+            "id": "suburban_home",
+            "name": "Suburban Home",
+            "cost": 100000,
+            "multiplier": 5.0,
+            "unlock_requirement": 50000,
+            "room_color": "#37474F",
+            "floor_color": "#90A4AE",
+            "furniture": [
+                {"id": "dining_table", "name": "Dining Table", "color": "#A1887F", "size": [200, 120], "position": [60, 540]},
+                {"id": "chandelier", "name": "Chandelier", "color": "#FFD54F", "size": [100, 80], "position": [460, 200]},
+                {"id": "piano", "name": "Piano", "color": "#212121", "size": [160, 100], "position": [760, 550]},
+                {"id": "curtains", "name": "Curtains", "color": "#EF5350", "size": [80, 180], "position": [300, 300]},
+                {"id": "rug", "name": "Rug", "color": "#FFAB91", "size": [200, 60], "position": [400, 660]}
+            ]
+        },
+        {
+            "id": "luxury_mansion",
+            "name": "Luxury Mansion",
+            "cost": 1000000,
+            "multiplier": 15.0,
+            "unlock_requirement": 500000,
+            "room_color": "#1A237E",
+            "floor_color": "#C5CAE9",
+            "furniture": [
+                {"id": "grand_sofa", "name": "Grand Sofa", "color": "#7B1FA2", "size": [280, 110], "position": [40, 560]},
+                {"id": "aquarium", "name": "Aquarium", "color": "#0097A7", "size": [160, 120], "position": [700, 530]},
+                {"id": "statue", "name": "Statue", "color": "#BDBDBD", "size": [70, 140], "position": [420, 520]},
+                {"id": "wine_rack", "name": "Wine Rack", "color": "#4E342E", "size": [100, 120], "position": [900, 530]},
+                {"id": "painting", "name": "Painting", "color": "#FFD740", "size": [120, 80], "position": [260, 280]},
+                {"id": "fireplace", "name": "Fireplace", "color": "#BF360C", "size": [140, 120], "position": [540, 530]}
+            ]
+        },
+        {
+            "id": "celebrity_penthouse",
+            "name": "Celebrity Penthouse",
+            "cost": 20000000,
+            "multiplier": 50.0,
+            "unlock_requirement": 10000000,
+            "room_color": "#0D0D0D",
+            "floor_color": "#424242",
+            "furniture": [
+                {"id": "hot_tub", "name": "Hot Tub", "color": "#00BCD4", "size": [180, 120], "position": [40, 560]},
+                {"id": "big_screen", "name": "Big Screen", "color": "#1B5E20", "size": [200, 110], "position": [680, 520]},
+                {"id": "gold_statue", "name": "Gold Statue", "color": "#FFC107", "size": [80, 150], "position": [420, 510]},
+                {"id": "pool_table", "name": "Pool Table", "color": "#2E7D32", "size": [160, 100], "position": [200, 560]},
+                {"id": "bar", "name": "Bar", "color": "#3E2723", "size": [140, 90], "position": [880, 550]},
+                {"id": "disco_ball", "name": "Disco Ball", "color": "#E0E0E0", "size": [60, 60], "position": [520, 180]},
+                {"id": "neon_sign", "name": "Neon Sign", "color": "#E91E63", "size": [160, 50], "position": [340, 250]}
+            ]
+        }
+    ]
+}
