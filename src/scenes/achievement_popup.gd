@@ -14,6 +14,8 @@ var _ach_id: String = ""
 
 func setup(ach_id: String) -> void:
 	_ach_id = ach_id
+	if is_node_ready():
+		_populate()
 
 
 func _ready() -> void:
