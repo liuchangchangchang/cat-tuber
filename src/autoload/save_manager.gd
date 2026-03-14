@@ -25,6 +25,7 @@ func _notification(what: int) -> void:
 
 func save_game() -> void:
 	var data := GameManager.get_save_data()
+	data["achievements"] = AchievementManager.get_save_data()
 	var json_string := JSON.stringify(data, "  ")
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file:
@@ -46,6 +47,8 @@ func load_game() -> void:
 	var current_time := Time.get_unix_time_from_system()
 	var elapsed := current_time - saved_time
 	GameManager.load_save_data(data)
+	if data.has("achievements"):
+		AchievementManager.load_save_data(data.achievements)
 	if elapsed > 1.0 and GameManager.coins_per_second > 0:
 		var balance := GameManager.get_balance()
 		var offline_coins := OfflineEarnings.calculate(

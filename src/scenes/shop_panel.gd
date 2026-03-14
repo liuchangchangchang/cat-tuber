@@ -1,13 +1,17 @@
 extends PanelContainer
 
 const ShopItemScene := preload("res://src/ui/shop_item_button.tscn")
+const AchievementItemScene := preload("res://src/ui/achievement_item.tscn")
 
 @onready var food_tab_btn: Button = %FoodTabBtn
 @onready var toy_tab_btn: Button = %ToyTabBtn
+@onready var ach_tab_btn: Button = %AchTabBtn
 @onready var food_scroll: ScrollContainer = %FoodScroll
 @onready var toy_scroll: ScrollContainer = %ToyScroll
+@onready var ach_scroll: ScrollContainer = %AchScroll
 @onready var food_list: VBoxContainer = %FoodList
 @onready var toy_list: VBoxContainer = %ToyList
+@onready var ach_list: VBoxContainer = %AchList
 
 var _active_tab: int = 0
 var _tab_active_style: StyleBoxFlat
@@ -15,7 +19,6 @@ var _tab_inactive_style: StyleBoxFlat
 
 
 func _ready() -> void:
-	# Create tab styles
 	_tab_active_style = StyleBoxFlat.new()
 	_tab_active_style.bg_color = Color(0.22, 0.25, 0.38, 1)
 	_tab_active_style.border_width_bottom = 3
@@ -34,9 +37,11 @@ func _ready() -> void:
 
 	food_tab_btn.pressed.connect(func(): _switch_tab(0))
 	toy_tab_btn.pressed.connect(func(): _switch_tab(1))
+	ach_tab_btn.pressed.connect(func(): _switch_tab(2))
 	_populate_items()
 	_switch_tab(0)
 	GameManager.house_upgraded.connect(_on_house_upgraded)
+	AchievementManager.achievement_completed.connect(func(_id): _populate_achievements())
 
 
 func _populate_items() -> void:
@@ -50,14 +55,27 @@ func _populate_items() -> void:
 		var btn: PanelContainer = ShopItemScene.instantiate()
 		toy_list.add_child(btn)
 		btn.setup(item, "toy")
+	_populate_achievements()
+
+
+func _populate_achievements() -> void:
+	_clear_list(ach_list)
+	for ach in AchievementManager.get_achievements():
+		var item: PanelContainer = AchievementItemScene.instantiate()
+		ach_list.add_child(item)
+		item.setup(ach)
 
 
 func _switch_tab(tab_idx: int) -> void:
 	_active_tab = tab_idx
 	food_scroll.visible = tab_idx == 0
 	toy_scroll.visible = tab_idx == 1
+	ach_scroll.visible = tab_idx == 2
 	_apply_tab_style(food_tab_btn, tab_idx == 0)
 	_apply_tab_style(toy_tab_btn, tab_idx == 1)
+	_apply_tab_style(ach_tab_btn, tab_idx == 2)
+	if tab_idx == 2:
+		_populate_achievements()
 
 
 func _apply_tab_style(btn: Button, active: bool) -> void:

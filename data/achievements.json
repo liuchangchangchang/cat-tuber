@@ -1,0 +1,17 @@
+{
+    "achievements": [
+        {"id": "first_coins", "name": "First Earnings", "desc": "Earn 100 coins total", "type": "earned", "target": 100, "reward": 50},
+        {"id": "food_5", "name": "Cat Feeder", "desc": "Buy 5 food items", "type": "food_count", "target": 5, "reward": 100},
+        {"id": "toy_5", "name": "Playful Owner", "desc": "Buy 5 toy items", "type": "toy_count", "target": 5, "reward": 100},
+        {"id": "earned_1k", "name": "Hundredaire", "desc": "Earn 1,000 coins total", "type": "earned", "target": 1000, "reward": 200},
+        {"id": "cps_10", "name": "Income Stream", "desc": "Reach 10 coins/sec", "type": "cps", "target": 10, "reward": 500},
+        {"id": "food_20", "name": "Cat Gourmet", "desc": "Buy 20 food items", "type": "food_count", "target": 20, "reward": 500},
+        {"id": "toy_20", "name": "Toy Hoarder", "desc": "Buy 20 toy items", "type": "toy_count", "target": 20, "reward": 500},
+        {"id": "earned_10k", "name": "Thousandaire", "desc": "Earn 10,000 coins total", "type": "earned", "target": 10000, "reward": 1000},
+        {"id": "cps_50", "name": "Money Machine", "desc": "Reach 50 coins/sec", "type": "cps", "target": 50, "reward": 2000},
+        {"id": "new_house", "name": "Moving Up", "desc": "Upgrade to a new house", "type": "house_index", "target": 1, "reward": 5000},
+        {"id": "food_50", "name": "Master Chef", "desc": "Buy 50 food items", "type": "food_count", "target": 50, "reward": 3000},
+        {"id": "earned_1m", "name": "Millionaire", "desc": "Earn 1,000,000 coins total", "type": "earned", "target": 1000000, "reward": 50000},
+        {"id": "cps_500", "name": "Tycoon", "desc": "Reach 500 coins/sec", "type": "cps", "target": 500, "reward": 100000}
+    ]
+}
