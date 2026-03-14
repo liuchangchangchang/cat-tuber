@@ -10,8 +10,8 @@
 - Placeholder visuals (ColorRect) for MVP
 
 ## Architecture
-- Autoloads: GameManager (state), SaveManager (persistence)
-- Systems: economy.gd, house_prestige.gd, destruction.gd, offline_earnings.gd (all static functions)
+- Autoloads: GameManager (state), AchievementManager (achievements), SaveManager (persistence)
+- Systems: economy.gd, house_prestige.gd, destruction.gd, offline_earnings.gd, day_cycle.gd (all static functions)
 - Signal-driven: all UI listens to GameManager signals, no cross-scene references
 - Data-driven: balance/items/houses defined in data/*.json
 
