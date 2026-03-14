@@ -1,7 +1,11 @@
 # Cat Tuber - Idle Tycoon Game
 
+## Workflow
+- After each modify is made, make a commit.
+- Always push all commits to remote in the end.
+
 ## Project
-- Godot 4.3+, GDScript, portrait mode (540x960 viewport)
+- Godot 4.6, GDScript, portrait mode (1080x1920 viewport, keep_width stretch)
 - iOS + Android target
 - Placeholder visuals (ColorRect) for MVP
 
