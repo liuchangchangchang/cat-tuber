@@ -3,16 +3,17 @@
 [ext_resource type="Script" path="res://src/ui/achievement_item.gd" id="1_a"]
 
 [node name="AchievementItem" type="PanelContainer"]
-custom_minimum_size = Vector2(0, 120)
+custom_minimum_size = Vector2(0, 130)
 script = ExtResource("1_a")
 
 [node name="HBox" type="HBoxContainer" parent="."]
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 14
 
 [node name="Info" type="VBoxContainer" parent="HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 4
 
 [node name="TopRow" type="HBoxContainer" parent="HBox/Info"]
 layout_mode = 2
@@ -27,40 +28,58 @@ text = "Achievement"
 [node name="AchCheck" type="Label" parent="HBox/Info/TopRow"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 22
 
 [node name="AchDesc" type="Label" parent="HBox/Info"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.55, 0.55, 0.65, 1)
+theme_override_colors/font_color = Color(0.5, 0.5, 0.6, 1)
 theme_override_font_sizes/font_size = 18
 text = "Description"
 
 [node name="BarRow" type="HBoxContainer" parent="HBox/Info"]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 10
 
 [node name="AchProgress" type="ProgressBar" parent="HBox/Info/BarRow"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(0, 22)
 show_percentage = false
 
 [node name="AchProgressLabel" type="Label" parent="HBox/Info/BarRow"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.65, 0.75, 1)
 theme_override_font_sizes/font_size = 18
 text = "0/10"
 
 [node name="Right" type="VBoxContainer" parent="HBox"]
 layout_mode = 2
 alignment = 1
+theme_override_constants/separation = 4
 
-[node name="AchReward" type="Label" parent="HBox/Right"]
+[node name="RewardRow" type="HBoxContainer" parent="HBox/Right"]
+layout_mode = 2
+alignment = 2
+theme_override_constants/separation = 6
+
+[node name="CoinIcon" type="ColorRect" parent="HBox/Right/RewardRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(20, 20)
+color = Color(1, 0.84, 0, 1)
+
+[node name="AchReward" type="Label" parent="HBox/Right/RewardRow"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
 theme_override_font_sizes/font_size = 22
 horizontal_alignment = 2
 text = "+100"
+
+[node name="AchStatus" type="Label" parent="HBox/Right"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 2
