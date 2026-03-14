@@ -6,16 +6,26 @@ const FurnitureScene := preload("res://src/ui/furniture_sprite.tscn")
 @onready var floor_rect: ColorRect = $Floor
 @onready var furniture_container: Node2D = $FurnitureContainer
 @onready var cat: Control = $Cat
+@onready var window_glass: ColorRect = $WindowGlass
+@onready var sun_rect: ColorRect = $Sun
+@onready var moon_rect: ColorRect = $Moon
+@onready var ceiling_lamp: ColorRect = $CeilingLamp
+@onready var lamp_cord: ColorRect = $LampCord
+@onready var lamp_glow: ColorRect = $LampGlow
+@onready var light_overlay: ColorRect = $LightOverlay
 
 var _furniture_nodes: Array[Control] = []
 var _destruction_timer: float = 0.0
 var _current_target_idx: int = -1
+var _time_check_timer: float = 0.0
+var _current_tod: int = -1
 
 
 func _ready() -> void:
 	GameManager.house_upgraded.connect(_on_house_upgraded)
 	GameManager.tap_earned.connect(_on_tap_earned)
 	_setup_house(GameManager.get_current_house())
+	_update_time_of_day()
 
 
 func _gui_input(event: InputEvent) -> void:
@@ -28,12 +38,35 @@ func _gui_input(event: InputEvent) -> void:
 
 
 func _process(delta: float) -> void:
-	if _furniture_nodes.is_empty():
+	if not _furniture_nodes.is_empty():
+		_destruction_timer -= delta
+		if _destruction_timer <= 0:
+			_destruction_timer = GameManager.get_destruction_interval()
+			_destroy_random_furniture()
+
+	_time_check_timer += delta
+	if _time_check_timer >= 5.0:
+		_time_check_timer = 0.0
+		_update_time_of_day()
+
+
+func _update_time_of_day() -> void:
+	var tod := DayCycle.get_current_time_of_day()
+	if tod == _current_tod:
 		return
-	_destruction_timer -= delta
-	if _destruction_timer <= 0:
-		_destruction_timer = GameManager.get_destruction_interval()
-		_destroy_random_furniture()
+	_current_tod = tod
+
+	var tween := create_tween().set_parallel(true)
+	tween.tween_property(window_glass, "color", DayCycle.get_window_color(tod), 1.5)
+	tween.tween_property(light_overlay, "color", DayCycle.get_room_tint(tod), 1.5)
+
+	var lamp_on := DayCycle.is_lamp_on(tod)
+	ceiling_lamp.visible = lamp_on
+	lamp_cord.visible = lamp_on
+	lamp_glow.visible = lamp_on
+
+	sun_rect.visible = DayCycle.show_sun(tod)
+	moon_rect.visible = DayCycle.show_moon(tod)
 
 
 func _setup_house(house_data: Dictionary) -> void:
@@ -41,11 +74,9 @@ func _setup_house(house_data: Dictionary) -> void:
 		return
 	room_bg.color = Color(house_data.get("room_color", "#5D4037"))
 	floor_rect.color = Color(house_data.get("floor_color", "#8D6E63"))
-	# Clear old furniture
 	for child in furniture_container.get_children():
 		child.queue_free()
 	_furniture_nodes.clear()
-	# Spawn furniture
 	var furniture_list: Array = house_data.get("furniture", [])
 	for fdata in furniture_list:
 		var fnode: Control = FurnitureScene.instantiate()
@@ -53,10 +84,11 @@ func _setup_house(house_data: Dictionary) -> void:
 		fnode.position = Vector2(fdata.position[0], fdata.position[1])
 		fnode.setup(fdata)
 		_furniture_nodes.append(fnode)
-	# Position cat
 	if _furniture_nodes.size() > 0:
 		cat.position = Vector2(480, 520)
 	_destruction_timer = GameManager.get_destruction_interval()
+	_current_tod = -1
+	_update_time_of_day()
 
 
 func _destroy_random_furniture() -> void:
@@ -65,10 +97,8 @@ func _destroy_random_furniture() -> void:
 	var idx := randi() % _furniture_nodes.size()
 	var target: Control = _furniture_nodes[idx]
 	_current_target_idx = idx
-	# Move cat to furniture then destroy
 	var target_pos := target.position + Vector2(-80, 0)
 	cat.move_to(target_pos)
-	# Delay the hit until cat arrives (approximate)
 	var dist := cat.position.distance_to(target_pos)
 	var delay := maxf(0.1, dist / 280.0)
 	get_tree().create_timer(delay).timeout.connect(func():
@@ -99,11 +129,9 @@ func _show_floating_text(text: String, pos: Vector2) -> void:
 	add_child(label)
 
 	var tween := create_tween()
-	# Pop in
 	label.scale = Vector2(0.5, 0.5)
 	tween.tween_property(label, "scale", Vector2(1.1, 1.1), 0.1)
 	tween.tween_property(label, "scale", Vector2.ONE, 0.05)
-	# Float up and fade
 	tween.tween_property(label, "position:y", pos.y - 80, 0.5)
 	tween.parallel().tween_property(label, "modulate:a", 0.0, 0.5)
 	tween.tween_callback(label.queue_free)
