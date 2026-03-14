@@ -14,6 +14,8 @@ var _ach_data: Dictionary = {}
 
 func setup(data: Dictionary) -> void:
 	_ach_data = data
+	if is_node_ready():
+		_refresh()
 
 
 func _ready() -> void:
