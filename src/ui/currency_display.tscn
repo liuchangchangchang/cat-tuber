@@ -4,29 +4,37 @@
 
 [node name="CurrencyDisplay" type="HBoxContainer"]
 script = ExtResource("1_a")
-theme_override_constants/separation = 12
+theme_override_constants/separation = 10
 
 [node name="CoinIcon" type="ColorRect" parent="."]
 layout_mode = 2
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(28, 28)
 color = Color(1, 0.84, 0, 1)
 
 [node name="CoinsLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.92, 0.4, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 36
 text = "0"
 
 [node name="Sep" type="Label" parent="."]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.5, 0.5, 0.6, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.4, 0.4, 0.5, 1)
+theme_override_font_sizes/font_size = 20
 text = "|"
 
 [node name="CPSLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4, 0.9, 0.45, 1)
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 22
 text = "0/s"
+
+[node name="BoostIndicator" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.5, 0.2, 1)
+theme_override_font_sizes/font_size = 20
+text = "2x"
