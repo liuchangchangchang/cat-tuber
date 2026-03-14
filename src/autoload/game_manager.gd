@@ -19,6 +19,7 @@ var toy_counts: Dictionary = {}
 
 var ad_boost_active: bool = false
 var ad_boost_remaining: float = 0.0
+var tap_count: int = 0
 
 var _balance: Dictionary = {}
 var _foods: Array = []
@@ -102,6 +103,7 @@ func _update_viewers() -> void:
 
 
 func tap() -> void:
+	tap_count += 1
 	var total_owned := _get_total_owned()
 	var amount := Economy.get_tap_value(
 		_balance.get("tap_bonus_coins", 1),
@@ -249,6 +251,7 @@ func get_save_data() -> Dictionary:
 		"food_counts": food_counts.duplicate(),
 		"toy_counts": toy_counts.duplicate(),
 		"ad_boost_remaining": ad_boost_remaining,
+		"tap_count": tap_count,
 		"timestamp": Time.get_unix_time_from_system(),
 	}
 
@@ -261,6 +264,7 @@ func load_save_data(data: Dictionary) -> void:
 	food_counts = data.get("food_counts", {})
 	toy_counts = data.get("toy_counts", {})
 	ad_boost_remaining = data.get("ad_boost_remaining", 0.0)
+	tap_count = int(data.get("tap_count", 0))
 	if ad_boost_remaining > 0:
 		ad_boost_active = true
 	_recalculate_cps()

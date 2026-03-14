@@ -53,6 +53,10 @@ func get_progress(ach: Dictionary) -> float:
 			return GameManager.coins_per_second
 		"house_index":
 			return GameManager.get_current_house_index()
+		"tap_count":
+			return GameManager.tap_count
+		"viewers":
+			return GameManager.viewer_count
 	return 0.0
 
 

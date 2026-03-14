@@ -1,17 +1,41 @@
 {
     "achievements": [
-        {"id": "first_coins", "name": "First Earnings", "desc": "Earn 100 coins total", "type": "earned", "target": 100, "reward": 50},
-        {"id": "food_5", "name": "Cat Feeder", "desc": "Buy 5 food items", "type": "food_count", "target": 5, "reward": 100},
-        {"id": "toy_5", "name": "Playful Owner", "desc": "Buy 5 toy items", "type": "toy_count", "target": 5, "reward": 100},
-        {"id": "earned_1k", "name": "Hundredaire", "desc": "Earn 1,000 coins total", "type": "earned", "target": 1000, "reward": 200},
-        {"id": "cps_10", "name": "Income Stream", "desc": "Reach 10 coins/sec", "type": "cps", "target": 10, "reward": 500},
-        {"id": "food_20", "name": "Cat Gourmet", "desc": "Buy 20 food items", "type": "food_count", "target": 20, "reward": 500},
-        {"id": "toy_20", "name": "Toy Hoarder", "desc": "Buy 20 toy items", "type": "toy_count", "target": 20, "reward": 500},
-        {"id": "earned_10k", "name": "Thousandaire", "desc": "Earn 10,000 coins total", "type": "earned", "target": 10000, "reward": 1000},
-        {"id": "cps_50", "name": "Money Machine", "desc": "Reach 50 coins/sec", "type": "cps", "target": 50, "reward": 2000},
-        {"id": "new_house", "name": "Moving Up", "desc": "Upgrade to a new house", "type": "house_index", "target": 1, "reward": 5000},
-        {"id": "food_50", "name": "Master Chef", "desc": "Buy 50 food items", "type": "food_count", "target": 50, "reward": 3000},
-        {"id": "earned_1m", "name": "Millionaire", "desc": "Earn 1,000,000 coins total", "type": "earned", "target": 1000000, "reward": 50000},
-        {"id": "cps_500", "name": "Tycoon", "desc": "Reach 500 coins/sec", "type": "cps", "target": 500, "reward": 100000}
+        {"id": "earn_100",     "name": "First Steps",      "desc": "Earn 100 coins total",          "type": "earned",     "target": 100,       "reward": 25},
+        {"id": "earn_1k",      "name": "Pocket Money",     "desc": "Earn 1,000 coins total",        "type": "earned",     "target": 1000,      "reward": 150},
+        {"id": "earn_10k",     "name": "Savings Account",  "desc": "Earn 10,000 coins total",       "type": "earned",     "target": 10000,     "reward": 1000},
+        {"id": "earn_100k",    "name": "Big Spender",      "desc": "Earn 100,000 coins total",      "type": "earned",     "target": 100000,    "reward": 8000},
+        {"id": "earn_1m",      "name": "Millionaire Cat",  "desc": "Earn 1,000,000 coins total",    "type": "earned",     "target": 1000000,   "reward": 75000},
+        {"id": "earn_10m",     "name": "Meow-llionaire",   "desc": "Earn 10,000,000 coins total",   "type": "earned",     "target": 10000000,  "reward": 500000},
+
+        {"id": "cps_1",        "name": "Dripping Coins",   "desc": "Reach 1 coin per second",       "type": "cps",        "target": 1,         "reward": 15},
+        {"id": "cps_10",       "name": "Steady Income",    "desc": "Reach 10 coins per second",     "type": "cps",        "target": 10,        "reward": 200},
+        {"id": "cps_100",      "name": "Cash Flow",        "desc": "Reach 100 coins per second",    "type": "cps",        "target": 100,       "reward": 5000},
+        {"id": "cps_1k",       "name": "Money Printer",    "desc": "Reach 1,000 coins per second",  "type": "cps",        "target": 1000,      "reward": 100000},
+        {"id": "cps_10k",      "name": "Infinite Money",   "desc": "Reach 10,000 coins per second", "type": "cps",        "target": 10000,     "reward": 1000000},
+
+        {"id": "food_3",       "name": "Snack Time",       "desc": "Buy 3 food items",              "type": "food_count", "target": 3,         "reward": 30},
+        {"id": "food_15",      "name": "Well Fed",         "desc": "Buy 15 food items",             "type": "food_count", "target": 15,        "reward": 500},
+        {"id": "food_50",      "name": "Gourmet Chef",     "desc": "Buy 50 food items",             "type": "food_count", "target": 50,        "reward": 5000},
+        {"id": "food_100",     "name": "Food Hoarder",     "desc": "Buy 100 food items",            "type": "food_count", "target": 100,       "reward": 25000},
+
+        {"id": "toy_3",        "name": "First Toy",        "desc": "Buy 3 toy items",               "type": "toy_count",  "target": 3,         "reward": 50},
+        {"id": "toy_15",       "name": "Playroom",         "desc": "Buy 15 toy items",              "type": "toy_count",  "target": 15,        "reward": 500},
+        {"id": "toy_50",       "name": "Toy Mountain",     "desc": "Buy 50 toy items",              "type": "toy_count",  "target": 50,        "reward": 5000},
+        {"id": "toy_100",      "name": "Toy Empire",       "desc": "Buy 100 toy items",             "type": "toy_count",  "target": 100,       "reward": 25000},
+
+        {"id": "tap_10",       "name": "Cat Petter",       "desc": "Tap the cat 10 times",          "type": "tap_count",  "target": 10,        "reward": 10},
+        {"id": "tap_100",      "name": "Tap Dancer",       "desc": "Tap the cat 100 times",         "type": "tap_count",  "target": 100,       "reward": 200},
+        {"id": "tap_500",      "name": "Turbo Tapper",     "desc": "Tap the cat 500 times",         "type": "tap_count",  "target": 500,       "reward": 2000},
+        {"id": "tap_2k",       "name": "Tap Legend",       "desc": "Tap the cat 2,000 times",       "type": "tap_count",  "target": 2000,      "reward": 15000},
+
+        {"id": "view_10",      "name": "Going Live",       "desc": "Reach 10 viewers",              "type": "viewers",    "target": 10,        "reward": 100},
+        {"id": "view_50",      "name": "Popular Stream",   "desc": "Reach 50 viewers",              "type": "viewers",    "target": 50,        "reward": 2000},
+        {"id": "view_200",     "name": "Viral Cat",        "desc": "Reach 200 viewers",             "type": "viewers",    "target": 200,       "reward": 20000},
+        {"id": "view_1k",      "name": "Internet Famous",  "desc": "Reach 1,000 viewers",           "type": "viewers",    "target": 1000,      "reward": 150000},
+
+        {"id": "house_1",      "name": "First Upgrade",    "desc": "Move to a new house",           "type": "house_index","target": 1,         "reward": 2000},
+        {"id": "house_2",      "name": "Suburban Life",     "desc": "Move to the Suburban Home",     "type": "house_index","target": 2,         "reward": 20000},
+        {"id": "house_3",      "name": "Living Large",     "desc": "Move to the Luxury Mansion",    "type": "house_index","target": 3,         "reward": 200000},
+        {"id": "house_4",      "name": "Celebrity Status", "desc": "Move to the Celebrity Penthouse","type": "house_index","target": 4,         "reward": 2000000}
     ]
 }
